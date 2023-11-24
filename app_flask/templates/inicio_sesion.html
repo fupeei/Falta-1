@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/inicio_sesion.css') }}">
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            <section>
+                <div class="inicio">
+                    <h1>Inicio de sesion</h1>
+                    <form class="scale-up-center" action="login" method="POST">
+                        <div>
+                            <label for="email">Correo electronico</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div>
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                        <div>
+                            <input class="button" type="submit" value="Iniciar sesion">
+                        </div>
+                        <a href="/registro">Crear cuenta</a>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+</body>
+</html>

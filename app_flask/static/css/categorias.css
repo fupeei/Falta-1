@@ -1,0 +1,43 @@
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+.titulos{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    width: 800px;
+    
+}
+#boton_cerrar{
+    display: flex;
+    align-items: center;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.secciones{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom:5px ;
+    padding: 5px;
+}
+ul{
+    display: flex;
+   
+}
+li{
+    margin-left: 20px;
+    list-style: none;
+}

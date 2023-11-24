@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/categorias.css') }}">
+    <title>Categorias</title>
+</head>
+
+<body>
+    <nav>
+        <div class="titulos">
+            <h2>inicio</h2>
+            <div id="boton_cerrar">
+                <button class="btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <article>
+        <div class="cuerpo">
+            <div class="secciones">
+                <p>Seccion Deportes</p>
+                <ul>
+                    <li><a href="/eventos">Futbol</a></li>
+                    <li>Basquetbol</li>
+                    <li>Tenis de Mesa</li>
+                </ul>
+            </div>
+            <div class="secciones">
+                <p>Seccion Juegos</p>
+                <ul>
+                    <li>Dota</li>
+                    <li>LOL</li>
+                    <li>VALORANT</li>
+                </ul>
+            </div>
+            <div class="secciones">
+                <p>Seccion Gym</p>
+                <ul>
+                    <li>horarios</li>
+                    <li>Gimnasios</li>
+                    <li>dietas</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
