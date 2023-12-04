@@ -34,11 +34,11 @@ def procesa_login():
     if usuario_login == None:
         flash('Este correo no existe', 'error_login')
         return redirect('/')
-    if not bcrypt.check_password_hash(usuario_login.password, request.form['password']):
+    if not bcrypt.check_password_hash(usuario_login.contraseña, request.form['password']):
         flash('Credenciales incorrectas', 'error_login')
         return redirect('/')
-    session['usuario_id'] = usuario_login.id
-    session['nombre'] = usuario_login.nombre
+    session['id_usuario'] = usuario_login.id_usuario
+    session['nombre'] = usuario_login.nombre_usuario
     session['apellido'] = usuario_login.apellido
     return redirect('/categorias')
    
