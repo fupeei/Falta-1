@@ -16,6 +16,11 @@ body{
     height: 200px;
     width: 570px;
 }
+a{
+    text-decoration: none;
+    font-size: xx-large;
+    color: black;
+}
 .container-crea-anuncio{
     display: flex;
     align-items: center;

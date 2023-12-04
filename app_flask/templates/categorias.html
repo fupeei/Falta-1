@@ -11,21 +11,34 @@
 <body>
     <nav>
         <div class="titulos">
-            <h2>inicio</h2>
+            <div id="boton_inicio">
+                <button class="btn_inicio" onmouseover="over(this)" onmouseout="out(this)">Inicio</button>
+            </div>
             <div id="boton_cerrar">
-                <button class="btn">Logout</button>
+                <form action="/procesa/logout" method="POST"></form><button class="btn_logout" onmouseover="overlog(this)" onmouseout="outlog(this)">Cerrar Sesión</button></form>
             </div>
         </div>
     </nav>
     <article>
         <div class="cuerpo">
-            <div class="secciones">
-                <p>Seccion Deportes</p>
-                <ul>
-                    <li><a href="/eventos">Futbol</a></li>
-                    <li>Basquetbol</li>
-                    <li>Tenis de Mesa</li>
-                </ul>
+            <div class="seccion_deportes" onmouseover="overdeportes(this)" onmouseout="outdeportes(this)">
+                <div id="deportes">
+                    <p>Seccion Deportes</p>
+                </div>
+                <div class="container">
+                    <img class="control prev" src="/static/imagenes/icono_flecha.png">
+                    <ul class="lista_deportes">
+                        <li><a class="item" id="futbol" href="/eventos">Fútbol</a></li>
+                        <li><a class="item" id="basket" href="">Básquetbol</a></li>
+                        <li><a class="item" id="tenismesa" href="">Tenis de Mesa</a></li>
+                        <li><a class="item" id="rugby" href="">Rugby</a></li>
+                        <li><a class="item" id="ciclismo" href="">Ciclismo</a></li>
+                        <li><a class="item" id="tenis" href="">Tenis</a></li>
+                        <li><a class="item" id="voleibol" href="">Vóleibol</a></li>
+                        <li><a class="item" id="balonmano" href="">Balonmano</a></li>
+                    </ul>
+                    <img class="control next" src="/static/imagenes/icono_flecha2.png">
+                </div>
             </div>
             <div class="secciones">
                 <p>Seccion Juegos</p>
@@ -33,6 +46,10 @@
                     <li>Dota</li>
                     <li>LOL</li>
                     <li>VALORANT</li>
+                    <li>CS2</li>
+                    <li>Apex Legend</li>
+                    <li>Rocket League</li>
+                    <li>Fornite</li>
                 </ul>
             </div>
             <div class="secciones">
@@ -41,10 +58,15 @@
                     <li>horarios</li>
                     <li>Gimnasios</li>
                     <li>dietas</li>
+                    <li>JUDO</li>
+                    <li>Karate</li>
+                    <li>Boxeo</li>
+                    <li>Taekwondo</li>
                 </ul>
             </div>
         </div>
     </article>
+    <script src="/static/js/categorias.js"></script>
 </body>
 
 </html>

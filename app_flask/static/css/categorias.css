@@ -1,43 +1,196 @@
-
-nav{
-    display: flex;
-    justify-content: center;
+/* barra de navegacion */
+nav {
+    display:               flex;
+    justify-content:     center;
+    background-color:#3669a7 ;
+    height:               100px;
 }
-.titulos{
-    display: flex;
+.titulos {
+    display:                  flex;
     justify-content: space-between;
-    padding: 0px 20px;
-    width: 800px;
+    padding:              0px 20px;
+    width:                   800px;
     
 }
-#boton_cerrar{
-    display: flex;
+#boton_cerrar {
+    display:       flex;
     align-items: center;
 }
+#boton_inicio {
+    display:       flex;
+    align-items: center;
+}
+.btn_inicio {
+    border: 1px solid #3461e9;
+    border-radius:          8px;
+    width:                100px;
+    height:                40px;
+    cursor:             pointer;
+}
+
+.btn_logout {
+    border: 1px solid #cb272c;
+    border-radius:          8px;
+    width:                100px;
+    height:                40px;
+    cursor:             pointer;
+
+}
+
+/* navegacion cuerpo de pagina */
 article{
-    display: flex;
-    flex-direction: column;
+    display:           flex;
+    flex-direction:  column;
     justify-content: center;
 }
 .cuerpo{
-    display: flex;
+    display:          flex;
     flex-direction: column;
-    align-items: center;
+    align-items:    center;
+    margin-top:      10px ;
     
 }
 .secciones{
-    width: 800px;
-    display: flex;
+    width:                   800px;
+    display:                  flex;
     justify-content: space-between;
-    border: 1px solid black;
-    margin-bottom:5px ;
-    padding: 5px;
+    border:      1px solid black;
+    margin-bottom:             5px;
+    padding:                   5px;
 }
+.seccion_deportes{
+    width:                   800px;
+    height:                  400px;
+    display:                  flex;
+    flex-direction:         column;
+    border:      1px solid black;
+    margin-bottom:             5px;
+    padding:                   5px;
+    
+}
+
+#deportes {
+    background-color: #3461e9;
+    padding-left:          10px;
+}
+
+.lista_deportes{
+    padding-inline-start:   0px;
+    scroll-behavior:     smooth;
+    display:               flex;
+    overflow:            hidden;
+    
+    
+}
+p{
+    font-size: larger;
+}
+/*imagenes*/
+#futbol{
+    background-image: url("/static/imagenes/futbol.png");
+    background-size: cover; 
+    background-position: -200px;
+    background-repeat: no-repeat;
+
+}
+#basket{
+    background-image: url("/static/imagenes/basket.jpg");
+    background-size: cover; 
+    background-position: -60px;
+    background-repeat: no-repeat;
+}
+#tenismesa{
+    background-image: url("/static/imagenes/tenis de mesa.jpg");
+    background-size: cover; 
+    background-position: -60px;
+    background-repeat: no-repeat;
+}
+#rugby{
+    background-image: url("/static/imagenes/rugby.jpg");
+    background-size: cover;
+    background-position: -200px;
+    background-repeat: no-repeat;
+}
+#ciclismo{
+    background-image: url("/static/imagenes/ciclismo.jpg");
+    background-size: cover;
+    background-position: -200px;
+    background-repeat: no-repeat;
+}
+#tenis{
+    background-image: url("/static/imagenes/tenis.jpg");
+    background-size: cover;
+    background-position: -200px;
+    background-repeat: no-repeat;
+}
+#voleibol{
+    background-image: url("/static/imagenes/voleibol.png");
+    background-size: cover;
+    background-position: -250px;
+    background-repeat: no-repeat;
+}
+#balonmano{
+    background-image: url("/static/imagenes/balonmano.jpg");
+    background-size: cover;
+    background-position: -30px;
+    background-repeat: no-repeat;
+}
+
+
+/*flechas*/
+.container{
+    position: relative;
+}
+.container .control{
+    position: absolute;
+    height:       40px;
+    cursor:    pointer;
+    object-fit:  cover;
+}
+.container .prev{
+    left: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+.container .next{
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.item{
+    display:                flex;
+    justify-content:      center;
+    align-items:          center;
+    background-color:  #cb272c;
+    width:                 200px;
+    height:                310px; 
+    transition:        all 500ms;
+    text-shadow: 0px 0px 2px black;
+    
+}
+.item:hover{
+    transform:        scale(1.05);
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+a{
+    text-decoration: none;
+    color:        white;
+    font-size: x-large;
+    
+}
+
 ul{
     display: flex;
-   
+    margin-block-start: 0;
+    margin-block-end: 0;
+    
 }
 li{
-    margin-left: 20px;
-    list-style: none;
+    margin: 20px;
+    list-style:  none;
+   
+    
 }

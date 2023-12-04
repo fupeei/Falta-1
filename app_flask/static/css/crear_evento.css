@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    width: 800px;
+}
+
+.botones{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+button{
+    height: 30px;
+    width: 100px;
+
+}
+
+.contenido_evento {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 450px;
+    gap: 10px;
+}
+
+/* actualizacion */
+.contenido3{
+    display:       flex;
+    align-items: center;
+    gap:           10px;
+}
+#descripcion{
+    width:  350px;
+    height: 100px;
+}
+#nombre_evento{
+    width: 215px;
+}
+#participantes{
+    width: 255px;
+}
+#fecha_evento{
+    width:      232px;
+    text-align:center;
+}
+#tipo{
+    width:      250px;
+    text-align:center;
+}
+#nuevo_evento{
+    display:         flex;
+    justify-content: left;
+
+}
+#Ubicacion{
+    width: 275px;
+}
+
+#hora_evento{
+    
+    width: 241px;
+}
+
+#crear{
+    width: 355px;
+}

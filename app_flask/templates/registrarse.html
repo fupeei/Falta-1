@@ -11,30 +11,89 @@
         <div class="container">
             <section class="registro">
                 <h1>Registrarse</h1>
-                <form action="registro" method="POST">
+                <form method="POST" action="/procesa/registro">
                     <div>
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" required>
+                        <label for="nombre_usuario" class="form-label">
+                            Nombre:
+                        </label>
+                        <input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control">
+
+                        {% for mensaje in get_flashed_messages(category_filter=['error_nombre']) %}
+                        <div class="error alert alert-danger">
+                            {{mensaje}}
+                        </div>
+                        {% endfor %}
+
                     </div>
                     <div>
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" id="apellido">
+                        <label for="apellido" class="form-label">
+                            Apellido:
+                        </label>
+                        <input type="text" id="apellido" name="apellido" class="form-control">
+
+                        {% for mensaje in get_flashed_messages(category_filter=['error_apellido']) %}
+                        <div class="error alert alert-danger">
+                            {{mensaje}}
+                        </div>
+                        {% endfor %}
+
                     </div>
                     <div>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" required>
+                        <label for="email" class="form-label">
+                            Email:
+                        </label>
+                        <input type="text" id="email" name="email" class="form-control">
+
+                        {% for mensaje in get_flashed_messages(category_filter=['error_email']) %}
+                        <div class="error alert alert-danger">
+                            {{mensaje}}
+                        </div>
+                        {% endfor %}
+
                     </div>
                     <div>
-                        <label for="password">Contraseña:</label>
-                        <input type="password" name="password" id="password" required>
+                        <label for="password" class="form-label">
+                            Password:
+                        </label>
+                        <input type="password" id="password" name="password" class="form-control">
                     </div>
                     <div>
-                        <label for="password-confirmar">Confirmar Contraseña:</label>
-                        <input type="password" name="password-confirmar" id="password">
+                        <label for="password_confirmar" class="form-label">
+                            Confirmar password:
+                        </label>
+                        <input type="password" id="password_confirmar" name="password_confirmar" class="form-control">
+
+                        {% for mensaje in get_flashed_messages(category_filter=['error_password']) %}
+                        <div class="error alert alert-danger">
+                            {{mensaje}}
+                        </div>
+                        {% endfor %}
+
                     </div>
                     <div>
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" name="telefono" id="telefono">
+                        <label for="telefono" class="form-label">
+                            Telefono:
+                        </label>
+                        <input type="telefono" id="telefono" name="telefono" class="form-control">
+
+                        {% for mensaje in get_flashed_messages(category_filter=['error_telefono']) %}
+                        <div class="error alert alert-danger">
+                            {{mensaje}}
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    <div>
+                        <label for="localidad" class="form-label">
+                            Localidad:
+                        </label>
+                        <input type="localidad" id="localidad" name="localidad" class="form-control">
+
+                        {% for mensaje in get_flashed_messages(category_filter=['error_localidad']) %}
+                        <div class="error alert alert-danger">
+                            {{mensaje}}
+                        </div>
+                        {% endfor %}
                     </div>
                     <button class="boton">Registrarse</button>
                 </form>
