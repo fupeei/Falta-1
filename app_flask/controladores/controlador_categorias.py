@@ -4,3 +4,7 @@ from app_flask import app
 @app.route("/categorias")
 def categorias():
     return render_template ("categorias.html")
+
+@app.route('/perfil')
+def desplegar_perfil():
+    return render_template ("perfil.html")

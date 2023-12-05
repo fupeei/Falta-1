@@ -1,0 +1,237 @@
+* {
+    margin:  0;
+    padding: 0;
+}
+.contenedor{
+    display:          flex;
+    flex-direction: column;
+    position:     relative;
+    
+}
+/*class barra de navegacion*/
+.navegacion{
+    background-color:#3586ff;
+    display:             flex;
+    justify-content:   center;
+    padding-top:         10px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 60px;
+    width: 800px;
+    gap: 10px;
+   
+}
+.nav-title {
+    display: flex;
+    color: white;
+    margin-right: 50px;
+    font-size: xx-large;
+    
+}
+.nav-links {
+    
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 50px;
+    
+}
+.pop {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-cerrar {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    height: 30px;
+    color: white;
+    background-color: rgb(0, 162, 255);
+    border: 3px solid black;
+    box-shadow: 3px 5px black;
+}
+
+#boton_cerrar {
+    display:       flex;
+    align-items: center;
+}
+#boton_perfil {
+    display:       flex;
+    align-items: center;
+}
+.btn_perfil {
+    border: 1px solid #3461e9;
+    border-radius:          8px;
+    width:                300px;
+    height:                40px;
+    cursor:             pointer;
+    font-size: larger;
+    background-color: #3461e9;
+    color: white;
+}
+.btn_perfil:hover{
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+.btn_logout {
+    border: 1px solid #cb272c;
+    color: #a30208;
+    border-radius:          8px;
+    width:                100px;
+    height:                40px;
+    cursor:             pointer;
+
+}
+
+
+/* cuerpo de contenedor */
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+.contenido{
+    width: 800px;
+    margin-top: 15px;
+}
+/* class perfil-tarjeta*/
+.perfil{
+    width: 800px;
+    
+}
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+   
+}
+.encabezado {
+    background-color: rgb(114, 191, 215);
+    position: relative;
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.imagen-usuario {
+    border-radius: 50%;
+    border: 2px solid rgb(211, 209, 209);
+    height: 100px;
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    background-color: #f0f0f0;
+}
+.cuerpo-perfil {
+    height: 250px;
+    padding: 50px;
+    padding-left: 30px;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid rgb(189, 189, 189);
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: larger;
+}
+
+.ubicacion {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.profile {
+    margin-top: 30px;
+    display:flex;
+    align-items: center;
+    gap: 3px;
+    width: fit-content;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.icono {
+    height: 20px;
+}
+.icono_gear{
+    height: 20px;
+}
+
+/* paneles de eventos */
+.titulo-panel{
+    width: 150px;
+    height: 30px;
+    font-size: x-large;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-top: 5px;
+    background-color: #786fef;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    color: #f0f0f0;
+  
+}
+
+.panel-evento{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    background-color: #786fef;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 5px 5px;
+
+}
+
+.eventos {
+    background-color: #8880eb;
+    border: 1px solid #a19bf5;
+    display:                flex;
+    padding:                10px;
+    gap:                    10px;
+    border-radius:          7px;
+    
+}
+
+.imagen_evento {
+    height: 100px;
+}
+.texto-evento{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.cancelar-evento{
+    display:           flex;
+    flex-direction:  column;
+    justify-content: center;
+    gap:               15px;
+    align-items:        end;
+}
+.btn {
+    color:                         white;
+    background-color:  rgb(242, 45, 15);
+    border:              2px solid black;
+    box-shadow:            3px 5px black;
+    height:                           25px;
+    width:                           150px;
+    padding:                           3px;
+
+}
+#pet{
+    margin-right: 10px;
+}
