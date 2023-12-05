@@ -7,26 +7,99 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/presentacion.css') }}">
     </head>
     <body>
-        <main class="contenedor">
+        <section class="barra-container">
             <div class="barra">
-                <div class="titulo">
-                    <h1>Falta uno!</h1>
+                <div class="logo">
+                    <h1><a href="#bienvenidoid">Falta uno!</a></h1>
                 </div>
-                <div class="boton">
+                <div class="boton-links">
+                    <h1><a href="#quetefaltaid">¿Qué te falta?</a></h1>
+                    <h1><a href="#tefalta1id">¿Te falta 1?</a></h1>
+                    <h1><a href="#buscasequipoid">¿Buscas Equipo?</a></h1>
                     <a href="/inicio/sesion"><button> Iniciar sesión </button></a>
                 </div>
             </div>
-            <div class="subcontenedor">
-                <div class="subtitulo">
-                    <p>Bienvenido a Falta uno</p>
+        </section>
+        <section class="bienvenido" id="bienvenidoid">
+            <div class="bienvenido-container">
+                <div class="bienvenido-parrafo">
+                    <h1 class="subtitulo">Bienvenido a Falta uno!</h1>
+                    <p> Conectamos a amantes de los videojuegos y del deporte en un espacio seguro. Únete para disfrutar y conectarte con otros mientras te diviertes con tranquilidad.</p>
+                    <p>¡Registrate ahora para formar parte de nuestra comunidad!</p>
+                    <a href="/registro"><button id="boton-registro"> Registrarse </button></a>
                 </div>
-                <div class="descripcion">
-                    <p> Conectamos a amantes de los videojuegos y del deporte en un espacio seguro. Únete para disfrutar y conectarte con otros mientras te diviertes con tranquilidad. </p>
-                </div>
-                <div class="union">
-                    <p>¡Únete ahora para formar parte de nuestra comunidad!</p>
+                <div class="bienvenido-imagen">
+                    <img src="/static/imagenes/fotoinicio.png" alt="">
                 </div>
             </div>
-        </main>
+        </section>
+        <section class="quetefalta" id="quetefaltaid">
+            <div class="quetefalta-container">
+                <div class="quetefalta-titulo">
+                    <h1 class="subtitulo">¿Qué te falta?</h1>
+                </div>
+                <div class="cuadros-conteiner">
+                    <div class="cuadro">
+                        <h1>Te falta uno?</h1>
+                        <p>Hacemos que el integrante que buscas se una a tu evento! </p>
+                    </div>
+                    <div class="cuadro">
+                        <h1>Buscas Equipo?</h1>
+                        <p>Te presentamos variedad de eventos a los que puedes unirte para formar parte del equipo!</p>
+                    </div>
+                </div>
+                <div >
+                    <img class="imagen-equipo" src="/static/imagenes/equipo.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="tefalta1" id="tefalta1id">
+            <div class="tefalta1-container">
+                
+                <div class="tefalta1-cuadro">
+                    <div class="tefalta1-parrafo">
+                        <div>
+                            <h1 class="subtitulo">¿Te falta uno?</h1>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptas nesciunt, doloremque temporibus, sunt optio neque perspiciatis quia, quis voluptatem id vero praesentium quas aperiam numquam accusantium. Accusamus, corrupti aspernatur.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="tefalta1-imagen" src="/static/imagenes/mirandotelefono2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="buscasequipo" id="buscasequipoid">
+            <div class="buscasequipo-container">
+                <div class="buscasequipo-cuadro">
+                    <div class="buscasequipo-imagen-container">
+                        <img class="buscasequipo-imagen" src="/static/imagenes/equipoonline.png" alt="">
+                    </div>
+                    <div class="buscasequipo-parrafo">
+                        <div>
+                            <h1 class="subtitulo">¿Buscas Equipo?</h1>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptas nesciunt, doloremque temporibus, sunt optio neque perspiciatis quia, quis voluptatem id vero praesentium quas aperiam numquam accusantium. Accusamus, corrupti aspernatur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="queesperas">
+            <div class="queesperas-container">
+                <h1>¿Qué esperas para buscar ese integrarte?</h1>
+                <h1>o ... </h1>
+                <h1>¡Tu equipo espera por ti!</h1>
+                <a href="/registro"><button id="boton-registro2"> Registrarse </button></a>
+            </div>
+        </section>
+            <div class='air air1'></div>
+            <div class='air air2'></div>
+            <div class='air air3'></div>
+            <div class='air air4'></div>
+        
     </body>
 </html>

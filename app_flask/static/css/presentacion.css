@@ -1,39 +1,138 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    
+    font-family:serif;
+    color: white;
+    
+}
+*{
     margin: 0;
     padding: 0;
 }
-
-body {
-    background-image: url("/static/imagenes/fondo1.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    font-family:serif;
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #3586ff;
+    overflow: hidden;
 }
-
+.air{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+}
+.air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+.air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+.air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+.air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+@keyframes wave{
+    0%{
+    background-position-x: 0px; 
+    }
+    100%{
+    background-position-x: 1000px; 
+    }
+}
+@keyframes wave2{
+    0%{
+    background-position-x: 0px; 
+    }
+    100%{
+    background-position-x: -1000px; 
+    }
+}
+.bienvenido, .quetefalta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.barra-container{
+    height: 100px;
+}
 .barra {
-    background-color: rgb(41, 40, 40);
-    color: rgba(223, 223, 223, 0.795);
-    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+    padding: 20px 200px;
+    font-size: 13px;
 }
-
-h1 {
-    margin-left: 20px;
+.boton-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.bienvenido{
+    height: 80vh;
+    padding-top: 80px;
+}
+.bienvenido-container{
+    display: flex;
+    margin-top: 30px;
+}
+.quetefalta{
+    height: 100vh;
 }
 
 button {
     margin-right: 20px;
     padding: 9px;
-    background-color: rgba(160, 19, 19, 0.767);
-    color: rgba(223, 223, 223, 0.795);
-    border-radius: 7px;
-    font-family: serif;
-    font-size: 14px;
+    background-color: white;
+    height: 50px;
+    width: 180px;
+    color: black;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
     font-weight: bold;
+    border:gainsboro 1px solid;
 }
-
+#boton-registro{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+}
 .contenedor {
     display: flex;
     flex-direction: column;
@@ -46,12 +145,22 @@ button {
     justify-items: center;
 }
 
-.subtitulo, .descripcion, .union {
-    color: rgba(223, 223, 223, 0.795);
-    font-family: serif;
-}
+
 .subtitulo {
     font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+.bienvenido-parrafo{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    gap: 10px;
+    font-size: 20px;
 }
 
 .descripcion, .union {
@@ -64,6 +173,138 @@ button {
 .union {
     font-weight: bold;
 }
+.imagen-equipo {
+    height: 400px;
+}
+.cuadros-conteiner{
+    display: flex;
+    gap: 200px;
+}
+.cuadro{
+    width: 300px;
+    border-radius: 40px;
+    padding: 30px 30px 30px 30px;
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+    background-color: black;
+    transition: all .2s ease-in-out;
+}
+.cuadro h1{
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.quetefalta{
+    padding-top: 90px;
+}
+.quetefalta-titulo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    color: white;
+    opacity: 1;
+}
+.quetefalta-container{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
 
-
-
+.cuadro:hover {
+    transform: scale(1.1) ;
+    transform-origin: center center;
+    
+}
+.tefalta1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.tefalta1-container{
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.tefalta1-cuadro{
+    display: flex;
+    justify-content: center;
+}
+.tefalta1-parrafo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    font-size: 20px;
+    gap: 10px;
+}
+.tefalta1-imagen{
+    height: 700px;
+}
+.buscasequipo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+.buscasequipo-container{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.buscasequipo-cuadro{
+    display: flex;
+    justify-content: center;
+    height: 800px;
+}
+.buscasequipo-parrafo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    font-size: 20px;
+    gap: 10px;
+}
+.buscasequipo-imagen{
+    height: 500px;
+}
+.buscasequipo-imagen-container{
+    display: flex;
+    align-items: center;
+}
+.queesperas{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+.queesperas-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: 20px;
+}
+#boton-registro2{
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+}
