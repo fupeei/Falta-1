@@ -4,7 +4,7 @@ function traerCategorias(event) {
         return res.json();
     })
     .then((datos) => {
-        var selectCategorias = document.getElementById("categorias");
+        var selectCategorias = document.getElementById("categoria_id_categoria");
         selectCategorias.innerHTML = "";
         datos.forEach((categoria) => {
         // Utiliza comillas simples para las cadenas en HTML y template literals para las variables

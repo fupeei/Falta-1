@@ -9,7 +9,7 @@ class Eventos:
         self.tipo = datos['tipo']
         self.nombre_evento = datos['nombre_evento']
         self.participantes = datos['participantes']
-        self.descrpcion = datos['descripcion']
+        self.descripcion = datos['descripcion']
         self.ubicacion = datos['ubicacion']
         self.fecha = datos['fecha']
         self.hora = datos['hora']
@@ -176,15 +176,18 @@ class Eventos:
 
 
     @staticmethod
-    def validar_bandas(datos):
+    def validar_eventos(datos):
         es_valido = True
-        if len(datos['tipo']) < 3:
-            flash('Por favor proporciona bien el nombre del evento.', 'error_banda')
+        """ if len(datos['tipo']) < 3:
+            flash('Por favor proporciona bien el nombre del evento.', 'error_tipo_evento')
             es_valido = False
+        if  len(datos['categoria_id_categoria']) < 3:
+            flash('Por favor proporciona la categoria del evento.', 'error_categoria')
+            es_valido = False """
         if len(datos['nombre_evento']) < 3:
             flash('Por favor proporciona el nombre_evento del evento.', 'error_nombre_evento')
             es_valido = False
-        if  len(datos['participantes']) < 3:
+        if  len(datos['participantes']) < 1:
             flash('Por favor proporciona la participantes del evento.', 'error_participantes')
             es_valido = False
         if  len(datos['descripcion']) < 3:
@@ -193,15 +196,13 @@ class Eventos:
         if  len(datos['ubicacion']) < 3:
             flash('Por favor proporciona la ubicacion del evento.', 'error_ubicacion')
             es_valido = False
-        if  len(datos['fecha']) < 3:
+        if  datos['fecha'] == '':
             flash('Por favor proporciona la fecha del evento.', 'error_fecha')
             es_valido = False
         if  len(datos['hora']) < 3:
             flash('Por favor proporciona la hora del evento.', 'error_hora')
             es_valido = False
-        if  len(datos['categoria_id_categoria']) < 3:
-            flash('Por favor proporciona la categoria del evento.', 'error_categoria_id_categoria')
-            es_valido = False
+
         return es_valido
     
 

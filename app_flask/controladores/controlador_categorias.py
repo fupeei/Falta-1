@@ -4,8 +4,11 @@ from flask import Blueprint
 from flask import jsonify
 
 categorias_bp = Blueprint('categorias_bp', __name__)
+
 @categorias_bp.route("/categorias")
 def categorias():
+    if "id_usuario" not in session:
+        return redirect('/')
     return render_template ("categorias.html")
 
 @categorias_bp.route('/obtener_categoria_tipo/<int:id>', methods=['GET'])

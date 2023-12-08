@@ -6,9 +6,17 @@ from flask import jsonify
 eventos_bp =Blueprint('eventos_bp', __name__) 
 
 # Removed unused import statement
-@eventos_bp.route("/crear_evento")
-def crearevento():
-    return render_template("crear_evento.html")
+@eventos_bp.route("/crear_evento", methods=['POST'])
+def crear_evento():
+    if Eventos.validar_eventos(request.form) == False:
+        return redirect('/formulario/evento')
+    nuevo_evento = {
+        **request.form,
+        "id_usuario": session['id_usuario']
+    }
+    Eventos.crear_uno(nuevo_evento)
+    return redirect("/eventos")
+
 @eventos_bp.route("/eventos")
 def eventos():
     return render_template("eventos.html")
@@ -18,9 +26,7 @@ def mas_info():
     return render_template("mas_info.html")
 
 @eventos_bp.route('/formulario/evento', methods=['GET'])
-def desplegar_crear_evento():
-    if "id_usuario" not in session:
-        return redirect('/')
+def desplegar_crear_evento():    
     return render_template('crear_evento.html')
 
 
