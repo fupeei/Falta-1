@@ -1,16 +1,19 @@
 from flask import render_template, session, redirect, request, flash
 from app_flask.modelos.modelo_inicio_y_registro import Usuario
 from app_flask import app
+from flask import Blueprint
 from flask_bcrypt import Bcrypt
+
+inicio_de_sesion_bp = Blueprint('inicio_de_sesion_bp', __name__)
 
 bcrypt = Bcrypt(app)
 
-@app.route("/inicio/sesion")
+@inicio_de_sesion_bp.route("/inicio/sesion")
 def inicio_de_sesion():
     return render_template ("inicio_sesion.html")
 
 
-@app.route('/procesa/registro', methods=['POST'])
+@inicio_de_sesion_bp.route('/procesa/registro', methods=['POST'])
 def procesa_registro():
     from pdb import set_trace
     set_trace()
@@ -28,7 +31,7 @@ def procesa_registro():
     
     return redirect('/categorias')
 
-@app.route('/procesa/login', methods=['POST'])
+@inicio_de_sesion_bp.route('/procesa/login', methods=['POST'])
 def procesa_login():
     usuario_login = Usuario.obtener_uno(request.form)
     if usuario_login == None:
@@ -43,11 +46,11 @@ def procesa_login():
     return redirect('/categorias')
    
 
-@app.route('/procesa/logout', methods=['POST'])
+@inicio_de_sesion_bp.route('/procesa/logout', methods=['POST'])
 def procesa_logout():
     session.clear()
     return redirect('/')
 
-@app.route("/registro")
+@inicio_de_sesion_bp.route("/registro")
 def registrarse():
     return render_template ("registrarse.html")

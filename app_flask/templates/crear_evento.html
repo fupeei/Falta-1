@@ -4,62 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Crear evento </title>
+    <title>Crear evento</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/crear_evento.css') }}">
 </head>
 
 <body>
     <main class="box">
         <div class="row">
-            <h2> Crear evento </h2>
+            <h2>Crear evento</h2>
             <div class="botones">
                 <div>
-                    <button class="btn primario"> Mi perfil </button>
+                    <button class="btn primario">Mi perfil</button>
                 </div>
                 <div>
-                    <button class="btn secundario"> Logout </button>
+                    <button class="btn secundario">Logout</button>
                 </div>
             </div>
         </div>
         <div class="contenido_evento">
             <div class="contenido5">
-                <label for="tipo"> Tipo de evento:</label>
-                <select name="tipo" id="tipo">
-                    <option> Deportes </option>
-                    <option> VideoJuegos </option>
+                <label for="tipo">Tipo de evento:</label>
+                <select name="tipo" id="tipo" onchange="traerCategorias(event)">
+                    <option value="1">Deportes</option>
+                    <option value="2">VideoJuegos</option>
+                </select>
+            </div>
+            <div>
+                <label for="categorias">Categorias:</label>
+                <select name="categorias" id="categorias">
                 </select>
             </div>
             <div class="contenido1">
-                <label for="nombre_evento"> Nombre del evento: </label>
+                <label for="nombre_evento">Nombre del evento:</label>
                 <input type="text" name="nombre_evento" id="nombre_evento">
             </div>
             <div class="contenido2">
-                <label for="participantes"> Participantes: </label>
+                <label for="participantes">Participantes:</label>
                 <input type="number" name="participantes" id="participantes">
             </div>
             <div class="contenido3">
-                <label for="de  scripcion"> Descripción del evento: </label>
+                <label for="descripcion">Descripción del evento:</label>
             </div>
             <div>
                 <textarea name="descripcion" id="descripcion"></textarea>
             </div>
             <div class="contenido4">
-                <label for="Ubicacion"> Ubicación: </label>
+                <label for="Ubicacion">Ubicación:</label>
                 <input type="text" name="Ubicacion" id="Ubicacion">
             </div>
             <div class="contenido5">
-                <label for="fecha_evento"> Fecha del evento: </label>
+                <label for="fecha_evento">Fecha del evento:</label>
                 <input type="date" name="fecha_evento" id="fecha_evento">
             </div>
             <div class="contenido4">
-                <label for="hora_evento"> Hora del Evento</label>
+                <label for="hora_evento">Hora del Evento</label>
                 <input type="text" name="hora_evento" id="hora_evento">
             </div>
             <div id="nuevo_evento">
-                <button id="crear"> Crear evento </button>
+                <button id="crear">Crear evento</button>
             </div>
         </div>
     </main>
+    <script src="{{url_for('static', filename = 'js/crearEvento.js')}}"></script>
 </body>
 
 </html>

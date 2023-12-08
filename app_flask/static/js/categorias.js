@@ -36,3 +36,4 @@ function overdeportes(element){
 function outdeportes(element){
     element.style.color = "black"
 }
+
