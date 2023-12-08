@@ -21,59 +21,17 @@
                 </div>
             </div>
         </div>
-        <div class="contenido_evento">
-            <div class="contenido5">
-                <label for="tipo">Tipo de evento:</label>
-                <select name="tipo" id="tipo" onchange="traerCategorias(event)">
-                    <option value="1">Deportes</option>
-                    <option value="2">VideoJuegos</option>
-                </select>
-            </div>
-            <div>
-                <label for="categorias">Categorias:</label>
-                <select name="categorias" id="categorias">
-                </select>
-            </div>
-            <div class="contenido1">
-                <label for="nombre_evento">Nombre del evento:</label>
-                <input type="text" name="nombre_evento" id="nombre_evento">
-            </div>
-            <div class="contenido2">
-                <label for="participantes">Participantes:</label>
-                <input type="number" name="participantes" id="participantes">
-            </div>
-            <div class="contenido3">
-                <label for="descripcion">Descripción del evento:</label>
-            </div>
-            <div>
-                <textarea name="descripcion" id="descripcion"></textarea>
-            </div>
-            <div class="contenido4">
-                <label for="Ubicacion">Ubicación:</label>
-                <input type="text" name="Ubicacion" id="Ubicacion">
-            </div>
-            <div class="contenido5">
-                <label for="fecha_evento">Fecha del evento:</label>
-                <input type="date" name="fecha_evento" id="fecha_evento">
-            </div>
-            <div class="contenido4">
-                <label for="hora_evento">Hora del Evento</label>
-                <input type="text" name="hora_evento" id="hora_evento">
-            </div>
-            <div id="nuevo_evento">
-                <button id="crear">Crear evento</button>
-            </div>
-            <form action="/crear/evento" method="POST">
+            <form>
                 <div class="contenido5">
                     <label for="tipo"> Tipo de evento:</label>
-                    <select name="tipo" id="tipo">
+                    <select name="tipo" id="tipo" onchange="traerCategorias(event)">
                         <option value="1"> Deportes </option>
                         <option value="2"> VideoJuegos </option>
                     </select>
                 </div>
                 <div class="contenido5">
                     <label for="categorias">Categoria:</label>
-                    <select name="categorias" id="categorias" onchange="traerCategorias(event)">
+                    <select name="categorias" id="categorias">
                     </select>
                 </div>
                 <div class="contenido1">
@@ -85,7 +43,7 @@
                     <input type="number" name="participantes" id="participantes">
                 </div>
                 <div class="contenido3">
-                    <label for="de  scripcion"> Descripción del evento: </label>
+                    <label for="descripcion"> Descripción del evento: </label>
                 </div>
                 <div>
                     <textarea name="descripcion" id="descripcion"></textarea>

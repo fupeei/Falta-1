@@ -3,7 +3,7 @@ from app_flask.modelos.modelo_categorias import Categorias
 from flask import Blueprint
 from flask import jsonify
 
-categorias_bp =Blueprint('categorias_bp', __name__)
+categorias_bp = Blueprint('categorias_bp', __name__)
 @categorias_bp.route("/categorias")
 def categorias():
     return render_template ("categorias.html")
