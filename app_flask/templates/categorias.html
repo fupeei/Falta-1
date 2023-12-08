@@ -11,11 +11,13 @@
 <body>
     <nav>
         <div class="titulos">
-            <div id="boton_inicio">
-                <button class="btn_inicio" onmouseover="over(this)" onmouseout="out(this)">Inicio</button>
-            </div>
+            <form action="/perfil" id="boton_inicio">
+                <button class="btn_inicio" onmouseover="over(this)" onmouseout="out(this)">Perfil</button>
+            </form>
             <div id="boton_cerrar">
-                <form action="/procesa/logout" method="POST"></form><button class="btn_logout" onmouseover="overlog(this)" onmouseout="outlog(this)">Cerrar Sesión</button></form>
+                <form action="/procesa/logout" method="POST">
+                    <button class="btn_logout" onmouseover="overlog(this)" onmouseout="outlog(this)">Cerrar Sesión</button>
+                </form>
             </div>
         </div>
     </nav>

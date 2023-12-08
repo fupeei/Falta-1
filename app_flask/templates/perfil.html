@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}">
+    <title>Perfil de Usuario</title>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navegacion">
+            <div class="nav">
+                <h1 class="nav-title">Perfil</h1>
+                <form action="/categorias" id="boton_perfil">
+                    <button class="btn_perfil">Unirte A Evento</button>
+                </form>
+                <div id="boton_cerrar">
+                    <form action="/procesa/logout" method="POST">
+                        <button class="btn_logout" onmouseover="overlog(this)" onmouseout="outlog(this)">Cerrar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <section class="cuerpo">
+            <div class="contenido">
+                <div class="perfil">
+                    <div class="tarjeta">
+                        <div class="encabezado">
+                            <img class="imagen-usuario" src="/static/imagenes/perfil.png" alt="imagen de ususario">
+                        </div>
+                        <div class="cuerpo-perfil">
+                            <h1>IVAN DRAGO</h1>
+                            <div class="ubicacion">
+                                <img class="icono" src="/static/imagenes/icons/map-marker.png" alt="marcador">&nbsp;&nbsp;
+                                <p>Russia</p>
+                            </div>
+                            <div class="habilidades">
+                                <p>Numero de Contacto:</p>
+                            </div>
+                            <p>Correo:</p>
+                            <div class="profile">
+                                <img class="icono_gear" src="/static/imagenes/icons/gear.png" alt="gear">&nbsp;
+                                <a href='#'>Editar perfil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="titulo-panel">
+                    <p>Tus Eventos</p>
+                </div>
+                <div class="panel-evento">
+                    <div class="eventos">
+                        <img class="imagen_evento" src="/static/imagenes/futbol.png" alt="evento futbol">
+                        <div class="texto-evento">
+                            <h1 class="titulo-evento">Partido futbol : [titulo del evento]</h1>
+                            <p>Fecha:</p>
+                            <p>Hora:</p>
+                            <p>Lugar:</p>
+                            <p>[descripcion del evento]</p>
+                        </div>
+                        <div class="cancelar-evento">
+                            <button class="btn"> ¿Cancelar evento?</button>
+                        </div>
+                    </div>
+                    <div class="eventos">
+                        <img class="imagen_evento" src="/static/imagenes/basket.jpg" alt="evento basket">
+                        <div class="texto-evento">
+                            <h1 class="titulo-evento">Partido Basquetbol : [titulo del evento]</h1>
+                            <p>Fecha:</p>
+                            <p>Hora:</p>
+                            <p>Lugar:</p>
+                            <p>[descripcion del evento]</p>
+                        </div>
+                        <div class="cancelar-evento">
+                            <button class="btn"> ¿Cancelar evento?</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="/static/js/perfil.js"></script>
+    
+</body>
+</html>
