@@ -12,8 +12,6 @@ def inicio_de_sesion():
 
 @app.route('/procesa/registro', methods=['POST'])
 def procesa_registro():
-    from pdb import set_trace
-    set_trace()
     if Usuario.validar_registro(request.form) == False:
         return redirect('/')
     password_encriptado = bcrypt.generate_password_hash(request.form['password'])

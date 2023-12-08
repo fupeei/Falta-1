@@ -20,7 +20,7 @@ function outlog(element){
 const prev = document.querySelector('.prev')
 const next = document.querySelector('.next')
 const lista = document.querySelector('.lista_deportes')
-
+/* 
 prev.addEventListener('click', () => {
     lista.scrollLeft -= 300
 })
@@ -28,7 +28,7 @@ prev.addEventListener('click', () => {
 next.addEventListener('click', () => {
     lista.scrollLeft += 300
 })
-
+ */
 /*recuadro seccion deportes */
 function overdeportes(element){
     element.style.color = "#f0f0f0"
@@ -36,3 +36,24 @@ function overdeportes(element){
 function outdeportes(element){
     element.style.color = "black"
 }
+
+/*Formulario crear un evento */
+function traerCategorias(event) {
+    fetch(`/categorias/${ event.target.value }`) //LO FUE A BUSCAR A LA RUTA
+        .then((res) => {
+            //Lo recibio
+            return res.json();
+        })
+        .then((datos) => {
+            //LO PROCESÓ
+            //hago algo con los datos
+            var selectCategorias = document.getElementById("categorias");
+            selectCategorias.innerHTML = "";
+            console.log(datos);
+            datos.forEach((categoria) => {
+                var content = `<option value="${categoria.id}">${categoria.nombre}</option>`;
+                selectCategorias.innerHTML += content;
+            });
+        });
+}
+

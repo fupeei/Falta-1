@@ -3,10 +3,10 @@
     padding: 0;
 }
 .box {
-    display: flex;
+    display:          flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    align-items:    center;
+    gap:              20px;
 }
 
 .row {
@@ -16,6 +16,7 @@
     padding: 10px;
     margin: 10px;
     width: 800px;
+    box-sizing: border-box;
 }
 
 .botones{
@@ -33,48 +34,82 @@ button{
     width: 800px;
     display: flex;
     flex-direction: column;
-    padding-left: 450px;
+    align-items: center;
     gap: 10px;
+}
+form{
+    width: 400px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* actualizacion */
+.contenido5{
+    width: 100%;
+    display: flex;
+    gap: 2px;
+}
+#tipo{
+    width:      100%;
+    text-align:center;
+}
+#categorias{
+    width: 100%;
+    text-align: center;
+}
+
+.contenido1{
+    display:       flex;
+    align-items: center;
+    gap:           10px;
+    width: 100%;
+}
+#nombre_evento{
+    width: 100%;
+}
+
+.contenido2{
+    display:       flex;
+    align-items: center;
+    gap:           10px;
+    width: 100%;
+}
+#participantes{
+    width: 100%;
+}
+
 .contenido3{
     display:       flex;
     align-items: center;
     gap:           10px;
+    width: 100%;
 }
 #descripcion{
-    width:  350px;
+    width:  100%;
     height: 100px;
 }
-#nombre_evento{
-    width: 215px;
-}
-#participantes{
-    width: 255px;
-}
+
+
 #fecha_evento{
-    width:      232px;
+    width:      100%;
     text-align:center;
 }
-#tipo{
-    width:      250px;
-    text-align:center;
-}
+
 #nuevo_evento{
     display:         flex;
     justify-content: left;
 
 }
 #Ubicacion{
-    width: 275px;
+    width: 100%;
 }
 
 #hora_evento{
     
-    width: 241px;
+    width: 100%;
 }
 
 #crear{
-    width: 355px;
+    width: 100%;
 }
