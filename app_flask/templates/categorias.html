@@ -9,62 +9,183 @@
 </head>
 
 <body>
-    <nav>
-        <div class="titulos">
-            <form action="/perfil" id="boton_inicio">
-                <button class="btn_inicio" onmouseover="over(this)" onmouseout="out(this)">Perfil</button>
-            </form>
-            <div id="boton_cerrar">
-                <form action="/procesa/logout" method="POST">
-                    <button class="btn_logout" onmouseover="overlog(this)" onmouseout="outlog(this)">Cerrar Sesión</button>
-                </form>
-            </div>
+    <div class="nav">
+        <div class="derecha">
+            <p>Perfil</p>
+            <p>Explorar</p>
         </div>
-    </nav>
+        <div class="izquierda">
+            <p>Sports</p>
+            <p>Esports</p>
+            <button>Cerrar Sesión</button>
+        </div>
+    </div>
     <article>
         <div class="cuerpo">
-            <div class="seccion_deportes" onmouseover="overdeportes(this)" onmouseout="outdeportes(this)">
-                <div id="deportes">
-                    <p>Seccion Deportes</p>
+            <div class="explorar-nombre-container">
+                <h1 id="explorar-nombre">Explora <img id="lupa-imagen" src="/static/imagenes/lupaicon.png" alt=""></h1>
+                <h2>Y elije la categoria del evento que quieres crear o unirte.</h2>
+            </div>
+            <div class="seccion-nombre-container">
+                <div>
+                    <h1 id="seccion-juegos-nombre">Sección Esports</h1>
                 </div>
-                <div class="container">
-                    <img class="control prev" src="/static/imagenes/icono_flecha.png">
-                    <ul class="lista_deportes">
-                        <li><a class="item" id="futbol" href="/eventos">Fútbol</a></li>
-                        <li><a class="item" id="basket" href="">Básquetbol</a></li>
-                        <li><a class="item" id="tenismesa" href="">Tenis de Mesa</a></li>
-                        <li><a class="item" id="rugby" href="">Rugby</a></li>
-                        <li><a class="item" id="ciclismo" href="">Ciclismo</a></li>
-                        <li><a class="item" id="tenis" href="">Tenis</a></li>
-                        <li><a class="item" id="voleibol" href="">Vóleibol</a></li>
-                        <li><a class="item" id="balonmano" href="">Balonmano</a></li>
-                    </ul>
-                    <img class="control next" src="/static/imagenes/icono_flecha2.png">
+                <div class="seccion-nombre">
+                    <img id="icono-deporte" src="/static/imagenes/deporteicon.png" alt="">
                 </div>
             </div>
-            <div class="secciones">
-                <p>Seccion Juegos</p>
-                <ul>
-                    <li>Dota</li>
-                    <li>LOL</li>
-                    <li>VALORANT</li>
-                    <li>CS2</li>
-                    <li>Apex Legend</li>
-                    <li>Rocket League</li>
-                    <li>Fornite</li>
-                </ul>
+            <section class="container">
+                <div class="secciones-container">
+                    <div class="secciones-subcontainer">
+                        <div class="categoria-juego">
+                            <div class="imagen-juego-contenedor">
+                                <a href="">
+                                    <img src="/static/imagenes/futbol.png" alt="" class="imagen-deporte">
+                                </a>
+                            </div>
+                            <h1>Futbol</h1>
+                        </div>
+                        <div class="categoria-juego">
+                            <div class="imagen-juego-contenedor">
+                                <a href="">
+                                    <img src="/static/imagenes/basket.jpg" alt="" class="imagen-deporte">
+                                </a>
+                            </div>
+                            <h1>Basquetball</h1>
+                        </div>
+                        <div class="categoria-juego">
+                            <div class="imagen-juego-contenedor">
+                                <a href="">
+                                    <img src="/static/imagenes/balonmano.jpg" alt="" class="imagen-deporte">
+                                </a>
+                            </div>
+                            <h1>Handball</h1>
+                        </div>
+                        <div class="categoria-juego">
+                            <div class="imagen-juego-contenedor">
+                                <a href="">
+                                    <img src="/static/imagenes/voleibol.png" alt="" class="imagen-deporte">
+                                </a>
+                            </div>
+                            <h1>Voleiball</h1>
+                        </div>
+                    </div>
+                    <div class="secciones-container">
+                        <div class="secciones-subcontainer">
+                            <div class="categoria-juego">
+                                <div class="imagen-juego-contenedor">
+                                    <a href="">
+                                        <img src="/static/imagenes/tenis.jpg" alt="" class="imagen-deporte">
+                                    </a>
+                                </div>
+                                <h1>Tenis</h1>
+                            </div>
+                            <div class="categoria-juego">
+                                <div class="imagen-juego-contenedor">
+                                    <a href="">
+                                        <img src="/static/imagenes/tenismesa.jpg" alt="" class="imagen-deporte">
+                                    </a>
+                                </div>
+                                <h1>Tenis de Mesa</h1>
+                            </div>
+                            <div class="categoria-juego">
+                                <div class="imagen-juego-contenedor">
+                                    <a href="">
+                                        <img src="/static/imagenes/rugby.jpg" alt="" class="imagen-deporte">
+                                    </a>
+                                </div>
+                                <h1>Rugby</h1>
+                            </div>
+                            <div class="categoria-juego">
+                                <div class="imagen-juego-contenedor">
+                                    <a href="">
+                                        <img src="/static/imagenes/gym.jpg" alt="" class="imagen-deporte">
+                                    </a>
+                                </div>
+                                <h1>Gym</h1>
+                            </div>
+                        </div>
+                </div>
+            </section>
+            <div class="seccion-nombre-container">
+                <div>
+                    <h1 id="seccion-juegos-nombre">Sección Esports</h1>
+                </div>
+                <div class="seccion-nombre">
+                    <img id="icono-juego" src="/static/imagenes/videojuegosicon.png" alt="">
+                </div>
             </div>
-            <div class="secciones">
-                <p>Seccion Gym</p>
-                <ul>
-                    <li>horarios</li>
-                    <li>Gimnasios</li>
-                    <li>dietas</li>
-                    <li>JUDO</li>
-                    <li>Karate</li>
-                    <li>Boxeo</li>
-                    <li>Taekwondo</li>
-                </ul>
+            <div class="secciones-container">
+                <div class="secciones-subcontainer">
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/fornite.jpg" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Fortnite</h1>
+                    </div>
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/valorant.png" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Valorant</h1>
+                    </div>
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/lol.jpg" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>League of Legends </h1>
+                    </div>
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/gtav.jpg" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Grand theft Auto V</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="secciones-container">
+                <div class="secciones-subcontainer">
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/cs2.png" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Counter Strike 2</h1>
+                    </div>
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="#">
+                                <img src="/static/imagenes/minecraft.jpg" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Minecraft</h1>
+                    </div>
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/dota2.png" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Dota 2</h1>
+                    </div>
+                    <div class="categoria-juego">
+                        <div class="imagen-juego-contenedor">
+                            <a href="">
+                                <img src="/static/imagenes/wow.png" alt="" class="imagen-juego">
+                            </a>
+                        </div>
+                        <h1>Word of Warcraft</h1>
+                    </div>
+                </div>
             </div>
         </div>
     </article>

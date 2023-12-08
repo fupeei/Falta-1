@@ -21,8 +21,21 @@ section{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: #3586ff;
+    background: linear-gradient(334deg, #f4e4b3, rgb(196, 161, 210),#3586ff);
+	background-size: 180% 180%;
+	animation: gradient-animation 20s ease infinite;
     overflow: hidden;
+}
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 .air{
     position: fixed;
@@ -215,7 +228,6 @@ button {
 .cuadro:hover {
     transform: scale(1.1) ;
     transform-origin: center center;
-    
 }
 .tefalta1{
     display: flex;

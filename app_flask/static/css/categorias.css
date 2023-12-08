@@ -1,41 +1,41 @@
-/* barra de navegacion */
-nav {
-    display:               flex;
-    justify-content:     center;
-    background-color:#3669a7 ;
-    height:               100px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
-.titulos {
-    display:                  flex;
-    justify-content: space-between;
-    padding:              0px 20px;
-    width:                   800px;
+/* barra de navegacion */
+body{
+    background-color: #f9f9f9;
+}
+.nav {
+    display:               flex;
+    justify-content: center;
+    align-items: center;
+    height:               60px;
+    gap: 600px;
+    background-color: white;
+    box-shadow: 0 0.1rem 0.4rem rgb(155, 155, 155)
+}
+.derecha{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: bold;
+    color: black;
+
+}
+.izquierda {
+    display:flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: bold;
+    color: black;
     
 }
-#boton_cerrar {
-    display:       flex;
-    align-items: center;
-}
-#boton_inicio {
-    display:       flex;
-    align-items: center;
-}
-.btn_inicio {
-    border: 1px solid #3461e9;
-    border-radius:          8px;
-    width:                100px;
-    height:                40px;
-    cursor:             pointer;
-}
 
-.btn_logout {
-    border: 1px solid #cb272c;
-    border-radius:          8px;
-    width:                100px;
-    height:                40px;
-    cursor:             pointer;
 
-}
+
 
 /* navegacion cuerpo de pagina */
 article{
@@ -69,129 +69,132 @@ article{
     
 }
 
-#deportes {
-    background-color: #3461e9;
-    padding-left:          10px;
+/*categoria juegos*/
+.secciones-container{
+    margin-bottom: 30px;
 }
-
-.lista_deportes{
-    padding-inline-start:   0px;
-    scroll-behavior:     smooth;
-    display:               flex;
-    overflow:            hidden;
-    
-    
-}
-p{
-    font-size: larger;
-}
-/*imagenes*/
-#futbol{
-    background-image: url("/static/imagenes/futbol.png");
-    background-size: cover; 
-    background-position: -200px;
-    background-repeat: no-repeat;
-
-}
-#basket{
-    background-image: url("/static/imagenes/basket.jpg");
-    background-size: cover; 
-    background-position: -60px;
-    background-repeat: no-repeat;
-}
-#tenismesa{
-    background-image: url("/static/imagenes/tenis de mesa.jpg");
-    background-size: cover; 
-    background-position: -60px;
-    background-repeat: no-repeat;
-}
-#rugby{
-    background-image: url("/static/imagenes/rugby.jpg");
-    background-size: cover;
-    background-position: -200px;
-    background-repeat: no-repeat;
-}
-#ciclismo{
-    background-image: url("/static/imagenes/ciclismo.jpg");
-    background-size: cover;
-    background-position: -200px;
-    background-repeat: no-repeat;
-}
-#tenis{
-    background-image: url("/static/imagenes/tenis.jpg");
-    background-size: cover;
-    background-position: -200px;
-    background-repeat: no-repeat;
-}
-#voleibol{
-    background-image: url("/static/imagenes/voleibol.png");
-    background-size: cover;
-    background-position: -250px;
-    background-repeat: no-repeat;
-}
-#balonmano{
-    background-image: url("/static/imagenes/balonmano.jpg");
-    background-size: cover;
-    background-position: -30px;
-    background-repeat: no-repeat;
-}
-
-
-/*flechas*/
-.container{
-    position: relative;
-}
-.container .control{
-    position: absolute;
-    height:       40px;
-    cursor:    pointer;
-    object-fit:  cover;
-}
-.container .prev{
-    left: 0;
-    top: 50%;
-    transform: translate(0%, -50%);
-    z-index: 1;
-}
-.container .next{
-    right: 0;
-    top: 50%;
-    transform: translate(0%, -50%);
-}
-
-.item{
-    display:                flex;
-    justify-content:      center;
-    align-items:          center;
-    background-color:  #cb272c;
-    width:                 200px;
-    height:                310px; 
-    transition:        all 500ms;
-    text-shadow: 0px 0px 2px black;
-    
-}
-.item:hover{
-    transform:        scale(1.05);
-    text-decoration-line: underline;
-    text-decoration-color: white;
-}
-
-a{
-    text-decoration: none;
-    color:        white;
-    font-size: x-large;
-    
-}
-
-ul{
+.seccion-nombre-container{
     display: flex;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    flex-direction: column;
+    gap: 20px;
+    width: 1060px;
+    margin-bottom: 20px;
+}
+.seccion-nombre{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 20px;
+    width: 800px;
+    height: 30px;
+    margin-bottom:             5px;
+    padding:                   5px;
+    border-radius: 10px;
+    padding-left: 20px;
+    border-style: none;
+    margin-bottom: 20px;
+    background: linear-gradient(334deg, #f4e4b3, rgb(233, 190, 250),#3586ff);
+	background-size: 180% 180%;
+	animation: gradient-animation 6s ease infinite;
+}
+
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.secciones-subcontainer{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+.secciones-subcontainer{
+    margin-bottom: 30px;
+}
+.imagen-juego{
+    height: 300px;
+    transition: all .2s ease-in-out;
+}
+
+.imagen-juego:hover {
+    transform: scale(1.04) ;
+    transform-origin: center center;
+    box-shadow: 0 0.1rem 0.4rem rgb(233, 190, 250);
+}
+#seccion-juegos-nombre{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+.categoria-juego{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.categoria-juego h1{
+    font-size: 20px;
+}
+.imagen-deporte{
+    height: 300px;
+    width: 225px;
+    transition: all .2s ease-in-out;
+    object-fit: cover;
+}
+.imagen-deporte:hover {
+    transform: scale(1.04) ;
+    transform-origin: center center;
+    box-shadow: 0 0.1rem 0.4rem rgb(233, 190, 250);
     
 }
-li{
-    margin: 20px;
-    list-style:  none;
-   
-    
+#explorar-nombre{
+    font-size: 50px;
+    font-weight: bolder;
+    color: black;
+}
+.explorar-nombre-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 1040px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+button {
+    margin-right: 20px;
+    padding: 9px;
+    background-color: white;
+    height: 50px;
+    width: 130px;
+    color: black;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border:gainsboro 1px solid;
+}
+#icono-deporte{
+    height: 100px;
+    transform: rotate(-10deg);
+    margin-right: 80px;
+}
+#icono-juego{
+    height: 120px;
+    transform: rotate(-20deg);
+    margin-right: 80px;
+}
+#lupa-imagen{
+    height: 50px;
+}
+.container{
+    margin-bottom: 100px;
 }

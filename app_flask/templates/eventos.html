@@ -6,21 +6,25 @@
         <title>Avisos</title>
     </head>
     <body>
-        <section class="barra">
-            <div class="barra-container">
-                <ul>
-                    <li><a href="#"><img src="/static/imagenes/flecha.png" alt=""></a></li>
-                    <li><a href="#"><img src="/static/imagenes/home.png" alt=""></a></li>
-                    <li><a href="#"><img src="/static/imagenes/perfil.png" alt=""></a></li>
-                    <li><a href="#"><img src="/static/imagenes/hamburger.png" alt=""></a></li>
-                </ul>
+        <div class="nav">
+            <div class="derecha">
+                <p>Perfil</p>
+                <p>Explorar</p>
             </div>
-        </section>
+            <div class="izquierda">
+                <p>Sports</p>
+                <p>Esports</p>
+                <button>Cerrar Sesión</button>
+            </div>
+        </div>
         <section class="titulo">
             <div>
-                <h1>Encuentra tu Partida!</h1>
+                <h1 id="saladeeventos">Sala de Eventos! <img id="eventoicono" src="/static/imagenes/eventoicono.png" alt=""></h1>
+                <h2>Aqui podras crear tu evento o unirte a uno!</h2>
+                <h2>Rapido! Ellos te esperan!</h2>
             </div>
         </section>
+        <div class="barra-color"></div>
         <section class="crea-tu-anuncio">
             
                 <div class="container-crea-anuncio">
@@ -32,55 +36,23 @@
             
         </section>
         <section class="avisos">
-            <div class="aviso-container">
-                <div>
-                    <h2>Titulo</h2>
-                    <h3>Descripcion...</h3>
-                    <h3>6/10</h3>
-                </div>
-                <div>
-                    <img id="img-aviso" src="/static/imagenes/cristiano-ronaldo-festeja.jpg" alt="">
-                </div>
-                <div class="btn-container">
-                    <a href="/mas/info"><button id="btn-unirse">+</button></a>
-                </div>
             </div><div class="aviso-container">
-                <div>
-                    <h2>Titulo</h2>
-                    <h3>Descripcion...</h3>
-                    <h3>6/10</h3>
+                <div class="usuario-titulo">
+                    <img id="img-profile-pequeña" src="/static/imagenes/imgen.jpg" alt="">
+                    <h3>Nombre Usuario</h3>
+                    <div class="circulo"></div>
+                    <h3>Gran Soker Navideño!</h3>
                 </div>
-                <div>
-                    <img id="img-aviso" src="/static/imagenes/cristiano-ronaldo-festeja.jpg" alt="">
-                </div>
-                <div class="btn-container">
-                    <button id="btn-unirse">+</button>
-                </div>
-            </div><div class="aviso-container">
-                <div>
-                    <h2>Titulo</h2>
-                    <h3>Descripcion...</h3>
-                    <h3>6/10</h3>
-                </div>
-                <div>
-                    <img id="img-aviso" src="/static/imagenes/cristiano-ronaldo-festeja.jpg" alt="">
-                </div>
-                <div class="btn-container">
-                    <button id="btn-unirse">+</button>
-                </div>
-            </div><div class="aviso-container">
-                <div>
-                    <h2>Titulo</h2>
-                    <h3>Descripcion...</h3>
-                    <h3>6/10</h3>
-                </div>
-                <div>
-                    <img id="img-aviso" src="/static/imagenes/cristiano-ronaldo-festeja.jpg" alt="">
-                </div>
-                <div class="btn-container">
-                    <button id="btn-unirse">+</button>
+                <div class="info-foto">
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt esse numquam delectus cumque aliquid fugit molestiae ullam suscipit error? Ut quidem molestiae rerum nihil dolorum earum exercitationem, sunt vitae non.</p>
+                    </div>
+                    <div class="btn-container">
+                        <button id="btn-unirse">+</button>
+                    </div>
                 </div>
             </div>
+            
         </section>
     </body>
 </html>
