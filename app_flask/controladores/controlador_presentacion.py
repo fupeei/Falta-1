@@ -1,6 +1,8 @@
 from flask import render_template
-from app_flask import app
+from flask import Blueprint
 
-@app.route("/")
+presentacion_bp = Blueprint('presentacion_bp', __name__)
+
+@presentacion_bp.route("/")
 def presentacion():
     return render_template("presentacion.html")

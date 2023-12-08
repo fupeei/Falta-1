@@ -1,7 +1,7 @@
 from app_flask.config.mysqlconnection import connectToMySQL
-from app_flask.modelos import modelo_inicio_y_registro
 from flask import flash
 from app_flask import BASE_DATOS
+from flask import jsonify
 
 class Eventos:
     def __init__(self, datos):
@@ -61,13 +61,118 @@ class Eventos:
         connectToMySQL(BASE_DATOS).query_db(query, datos_salida)
         
     @classmethod
-    def obtener_todos_api(cls,datos):
+    def obtener_todos(cls):
         query = """
-                SELECT * FROM categorias
-                WHERE tipo_id_tipo = %(id)s;
+            SELECT *
+            FROM  tipo JOIN nombre_evento
+                ON tipo.id_tipo = nombre_evento.id_nombre_evento;
+            """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query)
+        lista_eventos = []
+        for renglon in resultado:
+            eventos_actual = cls(renglon)
+            lista_eventos.append(eventos_actual)
+        return lista_eventos
+    
+    @classmethod
+    def obtener_uno(cls, datos):
+        query = """
+                SELECT *
+                FROM eventos
+                WHERE id_evento = %(id_evento)s;
                 """
-        connectToMySQL(BASE_DATOS).query_db(query,datos)
-      
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        return cls(resultado[0])
+    
+    @classmethod
+    def obtener_eventos_de_usuario(cls, datos):
+        query = """
+                SELECT *
+                FROM eventos
+                WHERE usuario_id = %(usuario_id)s;
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        lista_eventos = []
+        for renglon in resultado:
+            eventos_actual = cls(renglon)
+            lista_eventos.append(eventos_actual)
+        return lista_eventos
+    
+    @classmethod
+    def obtener_eventos_unido_usuario(cls, datos_usuario):
+        query = """
+                SELECT eventos.*
+                FROM eventos
+                JOIN participantes ON participantes.evento_id_evento = eventos.id_evento
+                WHERE participantes.usuario_id_usuario = %(usuario_id)s;
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+        lista_eventos = []
+        for renglon in resultado:
+            eventos = cls(renglon)
+            lista_eventos.append(eventos)
+        return lista_eventos
+    
+    @classmethod
+    def obtener_eventos_no_unido_usuario(cls, datos_usuario):
+        query = """
+                SELECT *
+                FROM eventos
+                WHERE eventos.id_evento NOT IN (
+                    SELECT eventos.id_evento
+                    FROM eventos
+                    JOIN participantes ON participantes.evento_id_evento = eventos.id_evento
+                    WHERE participantes.usuario_id_usuario = %(usuario_id)s
+                );
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+        lista_eventos = []
+        for renglon in resultado:
+            eventos = cls(renglon)
+            lista_eventos.append(eventos)
+        return lista_eventos
+    
+    @classmethod
+    def obtener_eventos_de_categoria(cls, datos):
+        query = """
+                SELECT *
+                FROM eventos
+                WHERE categoria_id_categoria = %(categoria_id_categoria)s;
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        lista_eventos = []
+        for renglon in resultado:
+            eventos_actual = cls(renglon)
+            lista_eventos.append(eventos_actual)
+        return lista_eventos
+    
+    @classmethod
+    def obtener_eventos_de_tipo(cls, datos):
+        query = """
+                SELECT *
+                FROM eventos
+                WHERE tipo = %(tipo)s;
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        lista_eventos = []
+        for renglon in resultado:
+            eventos_actual = cls(renglon)
+            lista_eventos.append(eventos_actual)
+        return lista_eventos
+    
+
+    @classmethod
+    def api_obtener_categorias(cls):
+        query = """
+                SELECT *
+                FROM categoria;
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query)
+            
+            # Transformar el resultado a una lista de diccionarios
+        categorias = [{'id': row['id_categoria'], 'nombre': row['nombre_categoria']} for row in resultado]
+            
+        return categorias
 
 
     @staticmethod
@@ -99,3 +204,5 @@ class Eventos:
             es_valido = False
         return es_valido
     
+
+
