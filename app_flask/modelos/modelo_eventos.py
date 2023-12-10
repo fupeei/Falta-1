@@ -2,6 +2,7 @@ from app_flask.config.mysqlconnection import connectToMySQL
 from flask import flash
 from app_flask import BASE_DATOS
 from flask import jsonify
+from app_flask.modelos import modelo_inicio_y_registro
 
 class Eventos:
     def __init__(self, datos):
@@ -16,7 +17,7 @@ class Eventos:
         self.categoria_id_categoria = datos['categoria_id_categoria']
         self.created_at = datos['created_at']
         self.updated_at = datos['updated_at']
-        
+        self.usuario = None
 
     @classmethod
     def crear_uno(cls, datos):
