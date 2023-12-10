@@ -1,10 +1,11 @@
-/*botones de inicio y cerrar sesion */
+var eventos = document.querySelectorAll('.eventos')
 
-function overlog(element){
-    element.style.backgroundColor = "#cb272c";
-    element.style.color = "#f0f0f0";
-}
-function outlog(element){
-    element.style.backgroundColor = "#f0f0f0";
-    element.style.color = "#a30208";
-}
+eventos.forEach(function(evento) {
+    evento.addEventListener('mouseover', function() {
+        this.style.transform = 'translate(-5px)';
+    });
+
+    evento.addEventListener('mouseout', function() {
+        this.style.transform = 'none';
+    });
+});
