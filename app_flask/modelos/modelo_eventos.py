@@ -2,6 +2,7 @@ from app_flask.config.mysqlconnection import connectToMySQL
 from flask import flash
 from app_flask import BASE_DATOS
 from flask import jsonify
+from app_flask.modelos import modelo_inicio_y_registro
 
 class Eventos:
     def __init__(self, datos):
@@ -14,15 +15,17 @@ class Eventos:
         self.fecha = datos['fecha']
         self.hora = datos['hora']
         self.categoria_id_categoria = datos['categoria_id_categoria']
+        self.usuarios_id_usuario = datos['usuarios_id_usuario']
         self.created_at = datos['created_at']
         self.updated_at = datos['updated_at']
+        self.usuario = None
         
 
     @classmethod
     def crear_uno(cls, datos):
         query = """
-                INSERT INTO eventos(tipo, nombre_evento, participantes, descripcion, ubicacion, fecha, hora, categoria_id_categoria)
-                VALUES (%(tipo)s, %(nombre_evento)s, %(participantes)s, %(descripcion)s, %(ubicacion)s, %(fecha)s, %(hora)s, %(categoria_id_categoria)s);
+                INSERT INTO eventos(tipo, nombre_evento, participantes, descripcion, ubicacion, fecha, hora, categoria_id_categoria, usuarios_id_usuario)
+                VALUES (%(tipo)s, %(nombre_evento)s, %(participantes)s, %(descripcion)s, %(ubicacion)s, %(fecha)s, %(hora)s, %(categoria_id_categoria)s, %(usuarios_id_usuario)s);
                 """
         return connectToMySQL(BASE_DATOS).query_db(query, datos)
     
@@ -64,14 +67,21 @@ class Eventos:
     def obtener_todos(cls):
         query = """
             SELECT *
-            FROM  tipo JOIN nombre_evento
-                ON tipo.id_tipo = nombre_evento.id_nombre_evento;
+            FROM  eventos 
+            JOIN usuarios ON eventos.usuarios_id_usuario = usuarios.id_usuario;
             """
         resultado = connectToMySQL(BASE_DATOS).query_db(query)
+
         lista_eventos = []
         for renglon in resultado:
-            eventos_actual = cls(renglon)
-            lista_eventos.append(eventos_actual)
+            evento_actual = cls(renglon)
+            usuarios = {
+                **renglon,
+                'created_at' : renglon['usuarios.created_at'],
+                'updated_at' : renglon['usuarios.updated_at']
+            }
+            evento_actual.usuario = modelo_inicio_y_registro.Usuario(usuarios)
+            lista_eventos.append(evento_actual)
         return lista_eventos
     
     @classmethod

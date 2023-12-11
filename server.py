@@ -9,5 +9,6 @@ app.register_blueprint(inicio_de_sesion_bp)
 app.register_blueprint(presentacion_bp)
 app.register_blueprint(categorias_bp)
 app.register_blueprint(eventos_bp)
+
 if __name__ == "__main__":
     app.run(debug=True)

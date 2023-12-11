@@ -5,21 +5,13 @@ from flask import jsonify
 
 eventos_bp =Blueprint('eventos_bp', __name__) 
 
-# Removed unused import statement
-@eventos_bp.route("/crear_evento", methods=['POST'])
-def crear_evento():
-    if Eventos.validar_eventos(request.form) == False:
-        return redirect('/formulario/evento')
-    nuevo_evento = {
-        **request.form,
-        "id_usuario": session['id_usuario']
-    }
-    Eventos.crear_uno(nuevo_evento)
-    return redirect("/eventos")
-
 @eventos_bp.route("/eventos")
 def eventos():
-    return render_template("eventos.html")
+    if "id_usuario" not in session:
+        return redirect('/') 
+    lista_eventos = Eventos.obtener_todos()
+    return render_template("eventos.html", lista_eventos = lista_eventos)
+
 
 @eventos_bp.route("/mas/info")
 def mas_info():
@@ -27,8 +19,21 @@ def mas_info():
 
 @eventos_bp.route('/formulario/evento', methods=['GET'])
 def desplegar_crear_evento():    
+    if "id_usuario" not in session:
+        return redirect('/')
     return render_template('crear_evento.html')
 
+# Removed unused import statement
+@eventos_bp.route("/crear_evento", methods=['POST'])
+def crear_evento():
+    if Eventos.validar_eventos(request.form) == False:
+        return redirect('/formulario/evento')
+    nuevo_evento = {
+        **request.form,
+        "usuarios_id_usuario": session['id_usuario']
+    }
+    Eventos.crear_uno(nuevo_evento)
+    return redirect("/eventos")
 
 @eventos_bp.route('/eliminar/evento/<int:id>', methods=['POST'])
 def eliminar_eventos(id):

@@ -8,13 +8,18 @@
     <body>
         <div class="nav">
             <div class="derecha">
-                <p>Perfil</p>
-                <p>Explorar</p>
+                <form action="/perfil">
+                    <button>Perfil</button>
+                </form>
+                <form action="/categorias"> 
+                    <button>Categorias</button>
+                </form>
             </div>
             <div class="izquierda">
-                <p>Sports</p>
-                <p>Esports</p>
-                <button>Cerrar Sesión</button>
+                <p>{{ session['nombre'] }} {{ session['apellido'] }} {{ session['email'] }}</p>
+                <form action="/procesa/logout" method="POST">
+                    <button>Cerrar Sesión</button>
+                </form>
             </div>
         </div>
         <section class="titulo">
@@ -36,23 +41,24 @@
             
         </section>
         <section class="avisos">
+            {% for evento in lista_eventos: %}
             </div><div class="aviso-container">
                 <div class="usuario-titulo">
                     <img id="img-profile-pequeña" src="/static/imagenes/imgen.jpg" alt="">
-                    <h3>Nombre Usuario</h3>
+                    <h3>{{evento.nombre}} {{evento.apellido}}</h3>
                     <div class="circulo"></div>
-                    <h3>Gran Soker Navideño!</h3>
+                    <h3>{{ evento.nombre_evento }}</h3>
                 </div>
                 <div class="info-foto">
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt esse numquam delectus cumque aliquid fugit molestiae ullam suscipit error? Ut quidem molestiae rerum nihil dolorum earum exercitationem, sunt vitae non.</p>
+                        <p>{{ evento.descripcion }}</p>
                     </div>
                     <div class="btn-container">
                         <button id="btn-unirse">+</button>
                     </div>
                 </div>
             </div>
-            
+            {% endfor %}
         </section>
     </body>
 </html>
