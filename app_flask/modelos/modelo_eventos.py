@@ -195,7 +195,7 @@ class Eventos:
             flash('Por favor proporciona la categoria del evento.', 'error_categoria')
             es_valido = False """
         if len(datos['nombre_evento']) < 3:
-            flash('Por favor proporciona el nombre_evento del evento.', 'error_nombre_evento')
+            flash('Por favor proporciona el nombre del evento.', 'error_nombre_evento')
             es_valido = False
         if  len(datos['participantes']) < 1:
             flash('Por favor proporciona la participantes del evento.', 'error_participantes')

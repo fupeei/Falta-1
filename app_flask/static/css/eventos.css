@@ -154,7 +154,6 @@ a{
     background-color: rgba(242, 242, 242, 0.5);
     box-shadow: 0 0.1rem 0.4rem rgb(155, 155, 155);
     transition: all .2s ease-in-out;
-    margin-bottom: 40px;
 }
 .usuario-titulo{
     display: flex;

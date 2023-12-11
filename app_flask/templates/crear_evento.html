@@ -11,97 +11,131 @@
 <body>
     <main class="box">
         <div class="row">
-            <h2>Crear evento</h2>
-            <div class="botones">
-                <div>
-                    <button class="btn primario">Mi perfil</button>
+            <div class="nav">
+                <div class="botones">
+                        <form action="/perfil">
+                            <button class="btn primario">Mi perfil</button>
+                        </form>
                 </div>
-                <div>
-                    <button class="btn secundario">Logout</button>
+                <h2>Crea Tu Evento</h2>
+                <div class="botones">
+                    <form action="/procesa/logout" method="POST">
+                        <button class="btn secundario">Logout</button>
+                    </form>
                 </div>
             </div>
         </div>
-            <form action="/crear_evento" method="POST">
-                <div class="contenido5">
-                    <label for="tipo"> Tipo de evento:</label>
-                    <select name="tipo" id="tipo" onchange="traerCategorias(event)">
-                        <option hidden></option>
-                        <option value="1"> Deportes </option>
-                        <option value="2"> VideoJuegos </option>
-                    </select>
-                </div>
-                <div class="contenido5">
-                    <label for="categoria_id_categoria">Categoria:</label>
-                    <select name="categoria_id_categoria" id="categoria_id_categoria">
-                    </select>
-                    {% for mensaje in get_flashed_messages(category_filter=['error_categoria']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+            <div class="form">
+                <form action="/crear_evento" method="POST">
+                    <div class="contenido">
+                        <div class="inner-cont1">
+                            <label for="tipo"> Tipo de evento:</label>
+                        </div>
+                        <div class="inner-cont2">
+                            <select name="tipo" id="tipo" onchange="traerCategorias(event)">
+                                <option hidden></option>
+                                <option value="1"> Deportes </option>
+                                <option value="2"> VideoJuegos </option>
+                            </select>
+                        </div>
                     </div>
-                    {% endfor %}
-                </div>
-                <div class="contenido1">
-                    <label for="nombre_evento"> Nombre del evento: </label>
-                    <input type="text" name="nombre_evento" id="nombre_evento">
-                    {% for mensaje in get_flashed_messages(category_filter=['error_nombre_evento']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+                    <div class="contenido">
+                        <div class="inner1">
+                            <label for="categoria_id_categoria">Categoria:</label>
+                        </div>
+                        <div class="inner2">
+                            <select name="categoria_id_categoria" id="categoria_id_categoria">
+                            </select>
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_categoria']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-                <div class="contenido2">
-                    <label for="participantes"> Participantes: </label>
-                    <input type="number" name="participantes" id="participantes">
-                    {% for mensaje in get_flashed_messages(category_filter=['error_participantes']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+                    <div class="contenido2">
+                        <div class="innernombre">
+                        <label for="nombre_evento"> Nombre del evento: </label>
+                        </div>
+                        <div class="innertext">
+                            <input type="text" name="nombre_evento" id="nombre_evento">
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_nombre_evento']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-                <div>
-                    <div class="contenido3">
-                        <label for="descripcion"> Descripción del evento: </label>
+                    <div class="contenido2">
+                        <div class="innerpart1">
+                            <label for="participantes"> Participantes: </label>
+                        </div>
+                        <div class="innerpart2">
+                            <input type="number" name="participantes" id="participantes">
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_participantes']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
                     <div>
-                        <textarea name="descripcion" id="descripcion"></textarea>
+                        <div class="contenido3">
+                            <label for="descripcion"> Descripción del evento: </label>
+                        </div>
+                        <div class="innerdescrip">
+                            <textarea name="descripcion" id="descripcion"></textarea>
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_descripcion']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% for mensaje in get_flashed_messages(category_filter=['error_descripcion']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+                    <div class="contenido2">
+                        <div class="innerubica1">
+                            <label for="ubicacion"> Ubicación: </label>
+                        </div>
+                        <div class="innerubica2">
+                            <input type="text" name="ubicacion" id="ubicacion">
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_ubicacion']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-                <div class="contenido2">
-                    <label for="ubicacion"> Ubicación: </label>
-                    <input type="text" name="ubicacion" id="ubicacion">
-                    {% for mensaje in get_flashed_messages(category_filter=['error_ubicacion']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+                    <div class="contenido2">
+                        <div class="innerfecha1">
+                            <label for="fecha"> Fecha del evento: </label>
+                        </div>
+                        <div class="innerfecha2">
+                            <input type="date" name="fecha" id="fecha">
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_fecha']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-                <div class="contenido2">
-                    <label for="fecha"> Fecha del evento: </label>
-                    <input type="date" name="fecha" id="fecha">
-                    {% for mensaje in get_flashed_messages(category_filter=['error_fecha']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+                    <div class="contenido2">
+                        <div class="innerhora1">
+                            <label for="hora"> Hora del Evento</label>
+                        </div>
+                        <div class="innerhora2">
+                            <input type="time" name="hora" id="hora">
+                        </div>
+                        {% for mensaje in get_flashed_messages(category_filter=['error_hora']) %}
+                        <div class="error_login alert alert-danger">
+                            {{ mensaje }}
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-                <div class="contenido2">
-                    <label for="hora"> Hora del Evento</label>
-                    <input type="datetime" name="hora" id="hora">
-                    {% for mensaje in get_flashed_messages(category_filter=['error_hora']) %}
-                    <div class="error_login alert alert-danger">
-                        {{ mensaje }}
+                    <div id="nuevo_evento">
+                        <button id="crear"> Crear evento </button>
                     </div>
-                    {% endfor %}
-                </div>
-                <div id="nuevo_evento">
-                    <button id="crear"> Crear evento </button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </main>
     <script src="{{url_for('static', filename = 'js/crearEvento.js')}}"></script>
