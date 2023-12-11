@@ -45,13 +45,17 @@
             </div><div class="aviso-container">
                 <div class="usuario-titulo">
                     <img id="img-profile-pequeña" src="/static/imagenes/imgen.jpg" alt="">
-                    <h3>{{evento.nombre}} {{evento.apellido}}</h3>
+                    <h3>{{ evento.usuario.nombre_usuario }} {{ evento.usuario.apellido }}</h3>
                     <div class="circulo"></div>
                     <h3>{{ evento.nombre_evento }}</h3>
                 </div>
                 <div class="info-foto">
                     <div>
-                        <p>{{ evento.descripcion }}</p>
+                        <p>{{ evento.participantes }}</p>
+                        <p>{{ evento.ubicacion }}</p>
+                        <p>{{ evento.fecha }}</p>
+                        <p>{{ evento.hora }}</p>
+
                     </div>
                     <div class="btn-container">
                         <button id="btn-unirse">+</button>
