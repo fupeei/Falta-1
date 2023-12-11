@@ -30,15 +30,15 @@
                             <img class="imagen-usuario" src="/static/imagenes/perfil.png" alt="imagen de ususario">
                         </div>
                         <div class="cuerpo-perfil">
-                            <h1>IVAN DRAGO</h1>
+                            <h1>{{ session['nombre'] }} {{ session['apellido'] }}</h1>
                             <div class="ubicacion">
                                 <img class="icono" src="/static/imagenes/icons/map-marker.png" alt="marcador">&nbsp;&nbsp;
-                                <p>Russia</p>
+                                <p>{{ session['localidad'] }}</p>
                             </div>
                             <div class="habilidades">
-                                <p>Numero de Contacto:</p>
+                                <p>Numero de Contacto: {{ session['telefono'] }}</p>
                             </div>
-                            <p>Correo:</p>
+                            <p>Correo: {{ session['email'] }}</p>
                             <div class="profile">
                                 <img class="icono_gear" src="/static/imagenes/icons/gear.png" alt="gear">&nbsp;
                                 <a href='#'>Editar perfil</a>
@@ -50,19 +50,21 @@
                     <p>Tus Eventos</p>
                 </div>
                 <div class="panel-evento">
+                    {% for evento in lista_eventos: %}
                     <div class="eventos">
                         <img class="imagen_evento" src="/static/imagenes/futbol.png" alt="evento futbol">
                         <div class="texto-evento">
-                            <h1 class="titulo-evento">Partido futbol : [titulo del evento]</h1>
-                            <p>Fecha:</p>
-                            <p>Hora:</p>
-                            <p>Lugar:</p>
-                            <p>[descripcion del evento]</p>
+                            <h1 class="titulo-evento">EVENTO: {{evento.nombre_evento}}</h1>
+                            <p>Fecha: {{ evento.formato_fecha() }}</p>
+                            <p>Hora: {{ evento.hora }}</p>
+                            <p>Lugar:{{ evento.ubicacion }}</p>
+                            <p>{{ evento.descripcion }}</p>
                         </div>
                         <div class="cancelar-evento">
                             <button class="btn"> ¿Cancelar evento?</button>
                         </div>
                     </div>
+                    {% endfor %}
                     <div class="eventos">
                         <img class="imagen_evento" src="/static/imagenes/basket.jpg" alt="evento basket">
                         <div class="texto-evento">
@@ -76,8 +78,6 @@
                             <button class="btn"> ¿Cancelar evento?</button>
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </section>

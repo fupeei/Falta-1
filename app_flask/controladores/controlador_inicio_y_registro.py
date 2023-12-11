@@ -42,6 +42,8 @@ def procesa_login():
     session['nombre'] = usuario_login.nombre_usuario
     session['apellido'] = usuario_login.apellido
     session['email'] = usuario_login.email
+    session['localidad'] = usuario_login.localidad
+    session['telefono'] = usuario_login.telefono
     return redirect('/categorias')
    
 
@@ -55,6 +57,3 @@ def registrarse():
     return render_template ("registrarse.html")
 
 
-@inicio_de_sesion_bp.route("/perfil")
-def desplegar_perfil():
-    return render_template ("perfil.html")

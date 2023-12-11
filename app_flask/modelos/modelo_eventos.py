@@ -20,7 +20,10 @@ class Eventos:
         self.updated_at = datos['updated_at']
         self.usuario = None
         
-
+    
+    def formato_fecha(self):
+        return self.fecha.strftime('%Y-%m-%d')
+    
     @classmethod
     def crear_uno(cls, datos):
         query = """
@@ -98,28 +101,42 @@ class Eventos:
     def obtener_eventos_de_usuario(cls, datos):
         query = """
                 SELECT *
-                FROM eventos
-                WHERE usuario_id = %(usuario_id)s;
+                FROM  eventos 
+                JOIN usuarios 
+                ON eventos.usuarios_id_usuario = usuarios.id_usuario
+                WHERE usuarios.id_usuario = %(id)s;
                 """
         resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
-        lista_eventos = []
-        for renglon in resultado:
-            eventos_actual = cls(renglon)
-            lista_eventos.append(eventos_actual)
-        return lista_eventos
+        renglon = resultado[0]
+        evento = cls(renglon)
+        usuarios = {
+            **renglon,
+            "created_at" : renglon['usuarios.created_at'],
+            "updated_at" : renglon['usuarios.updated_at'] 
+        }
+        Eventos.usuario = modelo_inicio_y_registro.Usuario(usuarios)
+        return evento
     
     @classmethod
-    def obtener_eventos_unido_usuario(cls, datos_usuario):
+    def obtener_eventos_unido_usuario(cls, datos):
         query = """
-                SELECT eventos.*
-                FROM eventos
-                JOIN participantes ON participantes.evento_id_evento = eventos.id_evento
-                WHERE participantes.usuario_id_usuario = %(usuario_id)s;
+                SELECT *
+                FROM  eventos 
+                JOIN usuarios 
+                ON eventos.usuarios_id_usuario = usuarios.id_usuario
+                WHERE usuarios.id_usuario = %(id)s;
                 """
-        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+      
         lista_eventos = []
         for renglon in resultado:
             eventos = cls(renglon)
+            usuarios = {
+                **renglon,
+                'created_at' : renglon['usuarios.created_at'],
+                'updated_at' : renglon['usuarios.updated_at']
+            }
+            eventos.usuario = modelo_inicio_y_registro.Usuario(usuarios)
             lista_eventos.append(eventos)
         return lista_eventos
     

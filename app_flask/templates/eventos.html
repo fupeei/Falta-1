@@ -8,9 +8,11 @@
     <body>
         <div class="nav">
             <div class="derecha">
-                <form action="/perfil">
+                {% for evento in lista_eventos: %}
+                <form action="/perfil/{{ evento.usuario.id_usuario }}">
                     <button>Perfil</button>
                 </form>
+                {% endfor %}
                 <form action="/categorias"> 
                     <button>Categorias</button>
                 </form>
@@ -45,17 +47,17 @@
             </div><div class="aviso-container">
                 <div class="usuario-titulo">
                     <img id="img-profile-pequeña" src="/static/imagenes/imgen.jpg" alt="">
-                    <h3>{{ evento.usuario.nombre_usuario }} {{ evento.usuario.apellido }}</h3>
+                    <h3>Organizador :{{ evento.usuario.nombre_usuario }} {{ evento.usuario.apellido }}</h3>
                     <div class="circulo"></div>
                     <h3>{{ evento.nombre_evento }}</h3>
                 </div>
                 <div class="info-foto">
                     <div>
-                        <p>{{ evento.participantes }}</p>
-                        <p>{{ evento.ubicacion }}</p>
-                        <p>{{ evento.fecha }}</p>
-                        <p>{{ evento.hora }}</p>
-
+                        <p>Participantes :{{ evento.participantes }}</p>
+                        <p>Ubicacion : {{ evento.ubicacion }}</p>
+                        <p>FECHA : {{ evento.formato_fecha() }}</p>
+                        <p>HORA : {{ evento.hora }}</p>
+                        <p>Descripcion del evento : {{ evento.descripcion }}</p>
                     </div>
                     <div class="btn-container">
                         <button id="btn-unirse">+</button>

@@ -12,7 +12,6 @@ def eventos():
     lista_eventos = Eventos.obtener_todos()
     return render_template("eventos.html", lista_eventos = lista_eventos)
 
-
 @eventos_bp.route("/mas/info")
 def mas_info():
     return render_template("mas_info.html")
@@ -87,3 +86,5 @@ def editar_evento(id):
         return redirect('/eventos/' + str(id) + '/editar')
     Eventos.actualizar_uno(request.form)
     return redirect('/eventos/' + str(id))
+
+
