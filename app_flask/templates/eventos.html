@@ -8,17 +8,17 @@
     <body>
         <div class="nav">
             <div class="derecha">
-                {% for evento in lista_eventos: %}
-                <form action="/perfil/{{ evento.usuario.id_usuario }}">
+
+                <form action="/perfil">
                     <button>Perfil</button>
                 </form>
-                {% endfor %}
+                
                 <form action="/categorias"> 
                     <button>Categorias</button>
                 </form>
             </div>
             <div class="izquierda">
-                <p>{{ session['nombre'] }} {{ session['apellido'] }} {{ session['email'] }}</p>
+                <p>{{ session['nombre'] }} {{ session['apellido'] }} {{ session['email'] }} </p>
                 <form action="/procesa/logout" method="POST">
                     <button>Cerrar Sesión</button>
                 </form>
@@ -35,7 +35,7 @@
         <section class="crea-tu-anuncio">
             
                 <div class="container-crea-anuncio">
-                    <img id="img-profile" src="/static/imagenes/imgen.jpg" alt="">
+                    <img id="img-profile" src="/static/imagenes/perfil.png" alt="">
                     <form action="/formulario/evento">
                         <button id="btn-crea-anuncio" > Crea un Evento +</button>
                     </form>
@@ -46,7 +46,7 @@
             {% for evento in lista_eventos: %}
             </div><div class="aviso-container">
                 <div class="usuario-titulo">
-                    <img id="img-profile-pequeña" src="/static/imagenes/imgen.jpg" alt="">
+                    <img id="img-profile-pequeña" src="/static/imagenes/perfil.png" alt="">
                     <h3>Organizador :{{ evento.usuario.nombre_usuario }} {{ evento.usuario.apellido }}</h3>
                     <div class="circulo"></div>
                     <h3>{{ evento.nombre_evento }}</h3>

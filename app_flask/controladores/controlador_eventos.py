@@ -40,7 +40,7 @@ def eliminar_eventos(id):
         "id_evento": id
     }
     Eventos.elimina_uno(evento)
-    return redirect('/categorias')
+    return redirect('/perfil')
 
 @eventos_bp.route('/formulario/editar/evento/<int:id>', methods=['GET'])
 def despliega_formulario_editar_evento(id):

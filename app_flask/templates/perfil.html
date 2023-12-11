@@ -60,25 +60,13 @@
                             <p>Lugar:{{ evento.ubicacion }}</p>
                             <p>{{ evento.descripcion }}</p>
                         </div>
-                        <div class="cancelar-evento">
+                        <form class="cancelar-evento" action="/eliminar/evento/{{ evento.id_evento }}" method="POST">
                             <button class="btn"> ¿Cancelar evento?</button>
-                        </div>
+                        </form>
                     </div>
                     {% endfor %}
-                    <div class="eventos">
-                        <img class="imagen_evento" src="/static/imagenes/basket.jpg" alt="evento basket">
-                        <div class="texto-evento">
-                            <h1 class="titulo-evento">Partido Basquetbol : [titulo del evento]</h1>
-                            <p>Fecha:</p>
-                            <p>Hora:</p>
-                            <p>Lugar:</p>
-                            <p>[descripcion del evento]</p>
-                        </div>
-                        <div class="cancelar-evento">
-                            <button class="btn"> ¿Cancelar evento?</button>
-                        </div>
                     </div>
-                </div>
+                </div>s
             </div>
         </section>
     </div>
