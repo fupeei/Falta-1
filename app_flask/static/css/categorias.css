@@ -85,7 +85,7 @@ article{
     align-items: center;
     justify-content: right;
     gap: 20px;
-    width: 800px;
+    width: 1020px;
     height: 30px;
     margin-bottom:             5px;
     padding:                   5px;
@@ -149,6 +149,44 @@ article{
     transition: all .2s ease-in-out;
     object-fit: cover;
 }
+.voleibol_img{
+    height:                   300px;
+    width:                    225px;
+    transition: all .2s ease-in-out;
+    object-fit:               cover;
+    object-position: right;
+}
+
+.basket_img{
+    height:                   300px;
+    width:                    225px;
+    transition: all .2s ease-in-out;
+    object-fit:               cover;
+    object-position:20%;
+}
+
+.futbol_img{
+    height:                   300px;
+    width:                    225px;
+    transition: all .2s ease-in-out;
+    object-fit:               cover;
+    object-position:60%;
+}
+.tenis_img{
+    height:                   300px;
+    width:                    225px;
+    transition: all .2s ease-in-out;
+    object-fit:               cover;
+    object-position:60%;
+}
+.rugby_img{
+    height:                   300px;
+    width:                    225px;
+    transition: all .2s ease-in-out;
+    object-fit:               cover;
+    object-position:70%;
+}
+
 .imagen-deporte:hover {
     transform: scale(1.04) ;
     transform-origin: center center;
@@ -165,9 +203,10 @@ article{
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    width: 1040px;
+    width: 1060px;
     margin-bottom: 50px;
     margin-top: 50px;
+    gap: 10px;
 }
 button {
     margin-right: 20px;

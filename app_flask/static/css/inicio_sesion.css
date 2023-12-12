@@ -85,6 +85,7 @@ body .air.air4{
 
 h1{
     font-size: 50px;
+    text-align: center;
 }
 a{
     text-decoration: none;
@@ -136,8 +137,19 @@ input{
     width: 200px;
     height: 30px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+#email, #password{
+    text-align: left;
+    padding-left: 10px;
 }
 .button-container{
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.init{
+   padding-left: 20px;
 }

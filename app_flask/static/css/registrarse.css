@@ -126,6 +126,9 @@ form{
     font-weight: bold;
     border:gainsboro 1px solid;
 }
+.register{
+    padding-left: 20px;
+}
 .input-space{
     display: flex;
     flex-direction: column;
@@ -140,4 +143,9 @@ input{
 }
 a{
     text-decoration: none;
+}
+
+.form-control{
+    box-sizing: border-box;
+    padding-left: 10px;
 }

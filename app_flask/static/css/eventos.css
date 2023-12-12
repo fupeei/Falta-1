@@ -19,14 +19,19 @@ body{
     align-items: center;
     width: 1250px;
     margin-bottom: 50px;
-    margin-top: 80px;
+    margin-top: 50px;
+}
+.eventos_nav{
+    display:          flex;
+    flex-direction: column;
+    gap:              5px;
 }
 .barra-color{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    width: 1000px;
     height: 30px;
     background: linear-gradient(334deg, #f4e4b3, rgb(233, 190, 250),#3586ff);
 	background-size: 180% 180%;
